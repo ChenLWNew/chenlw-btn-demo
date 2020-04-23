@@ -10,7 +10,24 @@
 </template>
 <script>
   export default {
-    props: ['icon','iconPosition'] //iconPosition我能帮使用者处理的是要么是left要么是right
+    // props: ['icon','iconPosition'] //iconPosition我能帮使用者处理的是要么是left要么是right
+    props: {
+      icon: {},
+      iconPosition: {
+        type: String,
+        default: 'left',
+        validator(value) {
+          /*
+          if(value !== 'left' && value !== 'right') {
+            return false
+          }else{
+            return true
+          }
+          */
+          return !(value !== 'left' && value !== 'right');
+        }
+      }
+    }
   }
 </script>
 <style lang="scss">
