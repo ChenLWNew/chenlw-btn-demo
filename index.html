@@ -48,11 +48,27 @@
 <!--      outline: none;-->
 <!--    }-->
 <!--  </style>-->
+  <style>
+    .icon {
+      width: 1em;
+      height: 1em;
+    }
+  </style>
 </head>
 <body>
 
   <div id="app">
-    <g-button></g-button>
+    <g-button icon="settings">
+      <span>Vue</span>
+    </g-button>
+
+    <g-button icon="settings">
+      <span>React</span>
+    </g-button>
+
+    <g-button icon="settings" icon-position="right">
+      <span>JS</span>
+    </g-button>
   </div>
 
 <!--<script src="./node_modules/vue/dist/vue.min.js"></script>-->
@@ -64,5 +80,6 @@
 <!--</script>-->
 
 <script src="./src/app.js"></script>
+<script src="//at.alicdn.com/t/font_1775194_g3zx8ihjo9u.js"></script>
 </body>
 </html>
