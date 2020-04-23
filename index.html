@@ -58,15 +58,15 @@
 <body>
 
   <div id="app">
-    <g-button icon="settings">
+    <g-button :loading="loading1" @click="loading1 = !loading1">
       <span>Vue</span>
     </g-button>
 
-    <g-button icon="settings" icon-position="up">
+    <g-button icon="settings" icon-position="up" :loading="loading2" @click="loading2 = !loading2">
       <span>React</span>
     </g-button>
 
-    <g-button icon="settings" icon-position="right">
+    <g-button icon="settings" icon-position="right" :loading="loading3" @click="loading3 = !loading3">
       <span>JS</span>
     </g-button>
     <svg>

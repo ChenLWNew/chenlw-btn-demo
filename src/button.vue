@@ -1,12 +1,12 @@
 <template>
-  <button class="g-button" :class="{[`icon-${iconPosition}`]: true}">
+  <button @click="$emit('click')" class="g-button" :class="{[`icon-${iconPosition}`]: true}">
     <!--
     <svg v-if="icon" class="icon">
       <use v-bind:xlink:href=`#i-${icon}`></use>
     </svg>
     -->
-    <g-icon class="icon" v-if="icon" :name="icon"></g-icon>
-    <g-icon class="loading" name="loading"></g-icon>
+    <g-icon class="icon" v-if="icon && !loading" :name="icon"></g-icon>
+    <g-icon v-if="loading" class="loading icon" name="loading"></g-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -17,6 +17,10 @@
     // props: ['icon','iconPosition'] //iconPosition我能帮使用者处理的是要么是left要么是right
     props: {
       icon: {},
+      loading: {
+        type: Boolean,
+        default: false
+      },
       iconPosition: {
         type: String,
         default: 'left',
