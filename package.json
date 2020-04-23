@@ -19,5 +19,8 @@
   "homepage": "https://github.com/ChenLWNew/chenlw-btn-demo#readme",
   "dependencies": {
     "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
   }
 }
