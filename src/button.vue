@@ -13,7 +13,15 @@
   </button>
 </template>
 <script>
+  // import Vue from 'vue'
+  // import Icon from './icon.vue'
+  // Vue.component('g-icon', Icon) 组件内不建议全局注册,所以还是局部注册吧
+
+  import Icon from './icon.vue'
   export default {
+    components: {
+      'g-icon': Icon
+    },
     // props: ['icon','iconPosition'] //iconPosition我能帮使用者处理的是要么是left要么是right
     props: {
       icon: {},
