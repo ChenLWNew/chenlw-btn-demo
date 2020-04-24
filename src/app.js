@@ -52,3 +52,22 @@ const expect = chai.expect
   expect(useElement.getAttribute('xlink:href')).to.eq('#i-settings')
   // 你的这个主观断言确实就是对的。那么你这条测试用例（Test Case）通过了。
 }
+
+{
+  // 测试button.vue组件的loading
+  const Constructor = Vue.extend(Button)
+  const button = new Constructor({
+    propsData: {
+      icon: 'settings',
+      loading: true
+    }
+  })
+  button.$mount() // 不需要一定要挂载到页面上,可以直接放到内存中,只要你在下面的断言是正确的话就OK,如果有错误就会输出控制台
+  let useElement = button.$el.querySelector('use')
+  let href = useElement.getAttribute('xlink:href')
+  expect(href).to.eq('#i-loading')
+  // 有的人问了, 不是传了settings的icon吗？又给了loading为true,那么应该有两个icon啊,你怎么断定拿到的icon的use标签的属性是loading而不是settings呢？
+  // 这就是你希望的断言啊。当你loading存在的时候settings就不应该存在啊,这就是你组件的需求啊
+  // 结果控制台没有报错。也就是对的
+  // expect(href).to.eq('#i-settings') 这句断言就错了
+}
