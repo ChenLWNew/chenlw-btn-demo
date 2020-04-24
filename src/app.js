@@ -136,4 +136,25 @@ const expect = chai.expect
   // 那么我们期待什么呢？我们希望上面的click绑定的回调函数被执行
   let button = vm.$el
   button.click()
+  // 但是这样写是不行的,你压根无法写断言啊。所以我们需要另外一个方式mock
+}
+
+import spies from 'chai-spies'
+chai.use(spies())
+{
+  // 使用 chai-spies 测试监听函数
+  const Constructor = Vue.extend(Button)
+  const vm = new Constructor({
+    propsData: {
+      icon: 'settings'
+    }
+  })
+  vm.$mount()
+  let spy = chai.spy(function(){
+
+  })
+  vm.$on('click',spy)
+  let button = vm.$el
+  button.click()
+  expect(spy).to.have.been.called()
 }
