@@ -1,11 +1,11 @@
 {
   "name": "chenlw-demo-1-1",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "a vue ui -btn",
   "main": "dist/index.js",
   "scripts": {
     "dev": "parcel index.html",
-    "build": "parcel build index.js --no-cache",
+    "build": "parcel build index.js --no-cache --no-minify",
     "dev-test": "parcel watch test/* --no-cache & karma start",
     "test": "parcel build test/* --no-cache --no-minify && karma start --single-run"
   },
