@@ -2,7 +2,7 @@
   "name": "chenlw-demo-1-1",
   "version": "0.0.2",
   "description": "a vue ui -btn",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "dev": "parcel index.html",
     "build": "parcel build index.js --no-cache",
